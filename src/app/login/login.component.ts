@@ -18,10 +18,12 @@ export class LoginComponent {
   login() {
     this.authService.login(this.email, this.password).subscribe(
       response => {
-        alert('Ingreso exitoso');
+        console.log('Ingreso exitoso', response); // Añadir consola para verificar la respuesta
+        alert(response.message); // Asegurarse de mostrar el mensaje de la respuesta JSON
       },
       error => {
-        alert('Error en el inicio de sesión');
+        console.error('Error en el inicio de sesión', error); // Añadir consola para verificar el error
+        alert(error.error.message || 'Error en el inicio de sesión'); // Mostrar el mensaje de error de la respuesta JSON
       }
     );
   }

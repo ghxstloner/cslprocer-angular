@@ -26,9 +26,11 @@ export class CreateAccountComponent {
 
     this.authService.register(this.nombre, this.email, this.telefono, this.password).subscribe(
       response => {
+        console.log('Registro exitoso', response); // Añadir consola para verificar la respuesta
         alert('Registro exitoso');
       },
       error => {
+        console.error('Error en el registro', error); // Añadir consola para verificar el error
         alert('Error en el registro');
       }
     );
