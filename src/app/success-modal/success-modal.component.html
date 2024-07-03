@@ -1,0 +1,9 @@
+<div class="modal-container">
+    <div class="modal-icon" [ngClass]="{'success': data.color === 'green', 'error': data.color === 'red'}">
+      <i [class]="data.icon"></i>
+    </div>
+    <h2 class="modal-title">{{ data.title }}</h2>
+    <p class="modal-message">{{ data.message }}</p>
+    <button mat-button (click)="dialogRef.close()" [ngStyle]="{'background-color': data.color}" class="modal-ok-button">Cerrar</button>
+  </div>
+  
